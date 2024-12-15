@@ -1,6 +1,10 @@
+import re
+from os import environ
 import os
 import logging
 from logging.handlers import RotatingFileHandler
+
+id_pattern = re.compile(r'^.\d+$')
 
 #Bot token @Botfather
 TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "")
@@ -37,7 +41,7 @@ IS_VERIFY = os.environ.get("IS_VERIFY", "True")
 TUT_VID = os.environ.get("TUT_VID", "https://t.me/openlinksshortner") # shareus ka tut_vid he 
 
 #force sub channel id, if you want enable force sub
-FORCE_SUB_CHANNEL = int(os.environ.get("FORCE_SUB_CHANNEL", "-1002216058061"))
+AUTH_CHANNEL = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('AUTH_CHANNEL', '-1002216058061 -1002291941872').split()] # give channel id with seperate space. Ex : ('-10073828 -102782829 -1007282828')
 
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 
