@@ -35,7 +35,7 @@ DB_NAME = os.environ.get("DATABASE_NAME", "project1")
 # 
 
 SHORTLINK_URL = os.environ.get("SHORTLINK_URL", "modijiurl.com")
-SHORTLINK_API = os.environ.get("SHORTLINK_API", "5c9561ef97f6cab4545a3b5b65f893f3632474e9")
+SHORTLINK_API = os.environ.get("SHORTLINK_API", "5c9561ef97f6cab4545b65f893f3632474e9")
 VERIFY_EXPIRE = int(os.environ.get('VERIFY_EXPIRE', 86400)) # Add time in seconds
 IS_VERIFY = os.environ.get("IS_VERIFY", "True")
 TUT_VID = os.environ.get("TUT_VID", "https://t.me/openlinksshortner") # shareus ka tut_vid he 
